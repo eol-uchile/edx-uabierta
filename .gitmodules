@@ -1,0 +1,3 @@
+[submodule "themes/uabierta-theme"]
+	path = themes/edx-uabierta
+	url = https://github.com/eol-uchile/uabierta-theme

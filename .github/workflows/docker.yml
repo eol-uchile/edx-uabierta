@@ -1,0 +1,25 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@master
+
+      - name: Build OpenedX
+        run: docker build . --file ./Dockerfile --tag eoluchile/edx-uabierta:${GITHUB_SHA} --tag eoluchile/edx-uabierta:latest
+
+      - name: Push
+        run: |
+          echo "${DOCKERHUB_PASSWORD}" | docker login --username ${DOCKERHUB_USER} --password-stdin
+          docker push eoluchile/edx-uabierta:${GITHUB_SHA}
+          docker push eoluchile/edx-uabierta:latest
+        env:
+          DOCKERHUB_USER: ${{ secrets.DOCKERHUB_USER }}
+          DOCKERHUB_PASSWORD: ${{ secrets.DOCKERHUB_PASSWORD }}
