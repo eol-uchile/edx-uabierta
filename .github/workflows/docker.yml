@@ -12,6 +12,9 @@ jobs:
     steps:
       - uses: actions/checkout@master
 
+      - name: Pull submodules
+        run: git submodule update --init --recursive
+
       - name: Build OpenedX
         run: docker build . --file ./Dockerfile --tag eoluchile/edx-uabierta:${GITHUB_SHA} --tag eoluchile/edx-uabierta:latest
 
