@@ -1,8 +1,5 @@
--e git+https://github.com/fdns/edx-sga@b3f87276849d16cedd5b4e3eb5a749f977c1fc78#egg=edx-sga
--e git+https://github.com/fdns/edx-ora2.git@a020c510a5e3c0efd21c04df608b46cd4b640b09#egg=ora2
--e git+https://github.com/raccoongang/edx_xblock_scorm.git@1fffcccc3584be04683b64a665174f9e6fc4d8a6#egg=scormxblock-xblock
+-e git+https://github.com/fdns/edx-sga@07989ef3ca61886a15d191d8bcf3bf3b8e566a0b#egg=edx-sga
+-e git+https://github.com/fdns/edx-ora2.git@dd96e5d1aef027c09f348f3f7a77fa4d4fcff39e#egg=ora2
+-e git+https://github.com/raccoongang/edx_xblock_scorm.git@cb337badbece4b1e31504ef453c4ce415cb2891c#egg=scormxblock-xblock
 fluent-logger==0.9.6
 python-json-logger==0.1.11
-
-social-auth-app-django==3.1.0
-social-auth-core==3.2.0
