@@ -1,4 +1,4 @@
-FROM eoluchile/edx-platform:55c72da70a4125928f04a30eb50792b4adbcc7fd
+FROM eoluchile/edx-platform:55c72da70a4125928f04a30eb50792b4adbcc7fd as base
 
 # Install private requirements: this is useful for installing custom xblocks.
 # In particular, to install xblocks from a private repository, clone the
@@ -12,3 +12,7 @@ RUN touch /openedx/requirements/private.txt \
 COPY ./themes/ /openedx/themes/
 RUN openedx-assets themes \
     && openedx-assets collect --settings=prod.assets
+
+FROM rclone/rclone:1.53 as s3
+
+COPY --from=base /openedx/staticfiles /data
