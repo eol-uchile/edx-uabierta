@@ -1,5 +1,6 @@
 -e git+https://github.com/eol-uchile/edx-sga@07989ef3ca61886a15d191d8bcf3bf3b8e566a0b#egg=edx-sga
 -e git+https://github.com/eol-uchile/edx-ora2.git@dd96e5d1aef027c09f348f3f7a77fa4d4fcff39e#egg=ora2
 -e git+https://github.com/eol-uchile/edx_xblock_scorm.git@cb337badbece4b1e31504ef453c4ce415cb2891c#egg=scormxblock-xblock
+-e git+https://github.com/eol-uchile/edx-newsletters@8ef3734d6dbd8e7a11e3e7c68b602713d95d8059#egg=edx-newsletters
 fluent-logger==0.9.6
 python-json-logger==0.1.11
