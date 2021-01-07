@@ -4,3 +4,4 @@
 -e git+https://github.com/eol-uchile/edx-newsletters@8ef3734d6dbd8e7a11e3e7c68b602713d95d8059#egg=edx-newsletters
 fluent-logger==0.9.6
 python-json-logger==0.1.11
+django-redis==4.9.0
