@@ -3,6 +3,7 @@
 -e git+https://github.com/eol-uchile/edx_xblock_scorm.git@cb337badbece4b1e31504ef453c4ce415cb2891c#egg=scormxblock-xblock
 -e git+https://github.com/eol-uchile/edx-newsletters@8ef3734d6dbd8e7a11e3e7c68b602713d95d8059#egg=edx-newsletters
 -e git+https://github.com/eol-uchile/eol-course-program-xblock@60cf791aef46cf3c4f9113bd34b6e3cc8beeec88#egg=eolcourseprogram-xblock
+-e git+https://github.com/eol-uchile/super-csv.git@95e78c8e9f0a8713491c477ab5ac34341c65143b#egg=super_csv
 fluent-logger==0.9.6
 python-json-logger==0.1.11
 django-redis==4.9.0
