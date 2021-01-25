@@ -11,6 +11,9 @@ RUN touch /openedx/requirements/private.txt \
 # Copy themes
 COPY ./themes/ /openedx/themes/
 RUN openedx-assets themes \
+    # Rebuild translations
+    && python manage.py lms --settings=prod.assets compilejsi18n \
+    && python manage.py cms --settings=prod.assets compilejsi18n \
     && openedx-assets collect --settings=prod.assets
 
 FROM rclone/rclone:1.53 as s3
