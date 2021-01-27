@@ -2,7 +2,7 @@
 -e git+https://github.com/eol-uchile/edx-ora2.git@dd96e5d1aef027c09f348f3f7a77fa4d4fcff39e#egg=ora2
 -e git+https://github.com/eol-uchile/edx_xblock_scorm.git@cb337badbece4b1e31504ef453c4ce415cb2891c#egg=scormxblock-xblock
 -e git+https://github.com/eol-uchile/edx-newsletters@8ef3734d6dbd8e7a11e3e7c68b602713d95d8059#egg=edx-newsletters
--e git+https://github.com/eol-uchile/eol-course-program-xblock@60cf791aef46cf3c4f9113bd34b6e3cc8beeec88#egg=eolcourseprogram-xblock
+-e git+https://github.com/eol-uchile/eol-course-program-xblock@7ad834233891c98ff97b644e46707547327730a4#egg=eolcourseprogram-xblock
 -e git+https://github.com/eol-uchile/super-csv.git@95e78c8e9f0a8713491c477ab5ac34341c65143b#egg=super_csv
 -e git+https://github.com/eol-uchile/eol_duplicate_xblock@d07b1f056a94b575a9e8446ea33f4ddcf027901f#egg=eol_duplicate_xblock
 fluent-logger==0.9.6
