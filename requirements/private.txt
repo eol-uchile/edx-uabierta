@@ -4,7 +4,7 @@
 -e git+https://github.com/eol-uchile/edx-newsletters@8ef3734d6dbd8e7a11e3e7c68b602713d95d8059#egg=edx-newsletters
 -e git+https://github.com/eol-uchile/eol-course-program-xblock@5727b611fe7cf03bf592e1936bc394d60d4feaa1#egg=eolcourseprogram-xblock
 -e git+https://github.com/eol-uchile/super-csv.git@95e78c8e9f0a8713491c477ab5ac34341c65143b#egg=super_csv
--e git+https://github.com/eol-uchile/eol_duplicate_xblock@428165687aa8d960d5b3a0124bd4232cf3ce5629#egg=eol_duplicate_xblock
+-e git+https://github.com/eol-uchile/eol_duplicate_xblock@e0f706c56b7d968f2949e81d4107748451c64883#egg=eol_duplicate_xblock
 fluent-logger==0.9.6
 python-json-logger==0.1.11
 django-redis==4.12.1
