@@ -5,7 +5,7 @@
 -e git+https://github.com/eol-uchile/eol-course-program-xblock@5727b611fe7cf03bf592e1936bc394d60d4feaa1#egg=eolcourseprogram-xblock
 -e git+https://github.com/eol-uchile/super-csv.git@95e78c8e9f0a8713491c477ab5ac34341c65143b#egg=super_csv
 -e git+https://github.com/eol-uchile/eol_duplicate_xblock@e0f706c56b7d968f2949e81d4107748451c64883#egg=eol_duplicate_xblock
--e git+https://github.com/eol-uchile/payment_link_xblock@c6c523ddbb847c62e2ae2fa7be75eafd475995dc#egg=payment_link_xblock
+-e git+https://github.com/eol-uchile/payment_link_xblock@915d289364fa4e60d8ec7dfae7aeb8c08f8711d3#egg=payment_link_xblock
 -e git+https://github.com/eol-uchile/eol_list_grade@0d7688919bad8b229bff2948f31fedd76f1029d2#egg=eol_list_grade
 fluent-logger==0.9.6
 python-json-logger==0.1.11
