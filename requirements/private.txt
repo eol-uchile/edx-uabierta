@@ -8,6 +8,7 @@
 -e git+https://github.com/eol-uchile/payment_link_xblock@915d289364fa4e60d8ec7dfae7aeb8c08f8711d3#egg=payment_link_xblock
 -e git+https://github.com/eol-uchile/eol_list_grade@0d7688919bad8b229bff2948f31fedd76f1029d2#egg=eol_list_grade
 -e git+https://github.com/eol-uchile/eol_gradeforum_xblock@1b5160b01a081aa68b42f9aed87845fa88b2b8a0#egg=eol_gradeforum_xblock
+-e git+https://github.com/eol-uchile/pdfXBlock@1ef65825dfcffbaa4aeec32451f4d495a78ab87c#egg=pdfXBlock
 fluent-logger==0.9.6
 python-json-logger==0.1.11
 django-redis==4.12.1
