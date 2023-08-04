@@ -1,0 +1,19 @@
+--- views.py	2023-08-04 11:40:57.731539701 -0400
++++ redirect_home.py	2023-08-04 15:13:21.008850982 -0400
+@@ -1,6 +1,7 @@
+ """Views for the branding app. """
+ 
+ import logging
++from django.http.response import HttpResponseRedirect
+ 
+ import six
+ from django.conf import settings
+@@ -68,7 +69,7 @@
+     #  marketing and edge are enabled
+ 
+     try:
+-        return student_views.index(request, user=request.user)
++        return HttpResponseRedirect("/portal")
+     except NoReverseMatch:
+         log.error(
+             'https is not a registered namespace Request from {}'.format(domain),
