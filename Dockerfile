@@ -14,7 +14,8 @@ RUN pip install --src ../venv/src -r /openedx/requirements/xblocks.txt
 # Copy themes
 COPY ./themes/ /openedx/themes/
 
-COPY redirect_home.py /openedx/edx-platform/lms/djangoapps/branding/views.py
+COPY views.py.patch views.py.patch
+RUN patch /openedx/edx-platform/lms/djangoapps/branding/views.py views.py.patch
 
 RUN openedx-assets themes \
     # Rebuild translations
