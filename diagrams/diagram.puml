@@ -6,9 +6,9 @@
 skinparam svgLinkTarget foo
 
 System_Boundary(c1, "edx-platform: edx-uabierta", $link="https://github.com/eol-uchile/edx-uabierta") {
-    System_Boundary(c2, "requirements", $link="https://github.com/eol-uchile/edx-uabierta/blob/markdown-diagram-updates/requirements/") {
+    System_Boundary(c2, "requirements", $link="https://github.com/eol-uchile/edx-uabierta/blob/master/requirements/") {
         
-            System_Boundary(apps, "apps", $link="https://github.com/eol-uchile/edx-uabierta/blob/markdown-diagram-updates/requirements/apps.txt") {
+            System_Boundary(apps, "apps", $link="https://github.com/eol-uchile/edx-uabierta/blob/master/requirements/apps.txt") {
             
                 Container(apps1, "edx-newsletters", $link="https://github.com/eol-uchile/edx-newsletters")
             
@@ -16,13 +16,11 @@ System_Boundary(c1, "edx-platform: edx-uabierta", $link="https://github.com/eol-
             
                 Container(apps3, "eol_duplicate_xblock", $link="https://github.com/eol-uchile/eol_duplicate_xblock")
             
-                Container(apps4, "uabierta-test", $link="https://github.com/eol-uchile/uabierta-test")
-            
-                Container(apps5, "uabierta-test2", $link="https://github.com/eol-uchile/uabierta-test2")
+                Container(apps4, "uabierta-test2", $link="https://github.com/eol-uchile/uabierta-test2")
             
             }
         
-            System_Boundary(python_packages, "python_packages", $link="https://github.com/eol-uchile/edx-uabierta/blob/markdown-diagram-updates/requirements/python_packages.txt") {
+            System_Boundary(python_packages, "python_packages", $link="https://github.com/eol-uchile/edx-uabierta/blob/master/requirements/python_packages.txt") {
             
                 Container(python_packages1, "fluent-logger")
             
@@ -32,7 +30,7 @@ System_Boundary(c1, "edx-platform: edx-uabierta", $link="https://github.com/eol-
             
             }
         
-            System_Boundary(xblocks, "xblocks", $link="https://github.com/eol-uchile/edx-uabierta/blob/markdown-diagram-updates/requirements/xblocks.txt") {
+            System_Boundary(xblocks, "xblocks", $link="https://github.com/eol-uchile/edx-uabierta/blob/master/requirements/xblocks.txt") {
             
                 Container(xblocks1, "edx-sga", $link="https://github.com/eol-uchile/edx-sga")
             
@@ -54,7 +52,7 @@ System_Boundary(c1, "edx-platform: edx-uabierta", $link="https://github.com/eol-
         
     }
 
-    System_Boundary(theme, "Themes", $link="https://github.com/eol-uchile/edx-uabierta/blob/markdown-diagram-updates/themes/") {
+    System_Boundary(theme, "Themes", $link="https://github.com/eol-uchile/edx-uabierta/blob/master/themes/") {
         
             Container(theme1, "edx-uabierta", $link="https://github.com/eol-uchile/uabierta-theme")
         
@@ -62,7 +60,7 @@ System_Boundary(c1, "edx-platform: edx-uabierta", $link="https://github.com/eol-
         
     }
 
-    System_Boundary(dockerfile, "edx-platform base", $link="https://github.com/eol-uchile/edx-uabierta/blob/markdown-diagram-updates/Dockerfile") {
+    System_Boundary(dockerfile, "edx-platform base", $link="https://github.com/eol-uchile/edx-uabierta/blob/master/Dockerfile") {
             Container(dk, "koa", $link="https://ghcr.io/eol-uchile/edx-platform:koa")
     }
 }
