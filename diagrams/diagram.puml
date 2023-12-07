@@ -1,0 +1,72 @@
+@startuml
+
+!define C4Container https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+!include C4Container
+
+skinparam svgLinkTarget foo
+
+System_Boundary(c1, "edx-platform: edx-uabierta", $link="https://github.com/eol-uchile/edx-uabierta") {
+    System_Boundary(c2, "requirements", $link="https://github.com/eol-uchile/edx-uabierta/blob/markdown-diagram-updates/requirements/") {
+        
+            System_Boundary(apps, "apps", $link="https://github.com/eol-uchile/edx-uabierta/blob/markdown-diagram-updates/requirements/apps.txt") {
+            
+                Container(apps1, "edx-newsletters", $link="https://github.com/eol-uchile/edx-newsletters")
+            
+                Container(apps2, "super_csv", $link="https://github.com/eol-uchile/super-csv.git")
+            
+                Container(apps3, "eol_duplicate_xblock", $link="https://github.com/eol-uchile/eol_duplicate_xblock")
+            
+                Container(apps4, "uabierta-test", $link="https://github.com/eol-uchile/uabierta-test")
+            
+                Container(apps5, "uabierta-test2", $link="https://github.com/eol-uchile/uabierta-test2")
+            
+            }
+        
+            System_Boundary(python_packages, "python_packages", $link="https://github.com/eol-uchile/edx-uabierta/blob/markdown-diagram-updates/requirements/python_packages.txt") {
+            
+                Container(python_packages1, "fluent-logger")
+            
+                Container(python_packages2, "python-json-logger")
+            
+                Container(python_packages3, "django-redis")
+            
+            }
+        
+            System_Boundary(xblocks, "xblocks", $link="https://github.com/eol-uchile/edx-uabierta/blob/markdown-diagram-updates/requirements/xblocks.txt") {
+            
+                Container(xblocks1, "edx-sga", $link="https://github.com/eol-uchile/edx-sga")
+            
+                Container(xblocks2, "ora2", $link="https://github.com/eol-uchile/edx-ora2.git")
+            
+                Container(xblocks3, "scormxblock", $link="https://github.com/eol-uchile/edx_xblock_scorm")
+            
+                Container(xblocks4, "eolcourseprogram-xblock", $link="https://github.com/eol-uchile/eol-course-program-xblock")
+            
+                Container(xblocks5, "payment_link_xblock", $link="https://github.com/eol-uchile/payment_link_xblock")
+            
+                Container(xblocks6, "eol_list_grade", $link="https://github.com/eol-uchile/eol_list_grade")
+            
+                Container(xblocks7, "eol_gradeforum_xblock", $link="https://github.com/eol-uchile/eol_gradeforum_xblock")
+            
+                Container(xblocks8, "pdfXBlock", $link="https://github.com/eol-uchile/pdfXBlock")
+            
+            }
+        
+    }
+
+    System_Boundary(theme, "Themes", $link="https://github.com/eol-uchile/edx-uabierta/blob/markdown-diagram-updates/themes/") {
+        
+            Container(theme1, "edx-uabierta", $link="https://github.com/eol-uchile/uabierta-theme")
+        
+            Container(theme2, "open-edx", $link="https://github.com/eol-uchile/edx-uabierta")
+        
+    }
+
+    System_Boundary(dockerfile, "edx-platform base", $link="https://github.com/eol-uchile/edx-uabierta/blob/markdown-diagram-updates/Dockerfile") {
+            Container(dk, "koa", $link="https://ghcr.io/eol-uchile/edx-platform:koa")
+    }
+}
+
+SHOW_LEGEND()
+
+@enduml
