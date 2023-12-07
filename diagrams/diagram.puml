@@ -16,8 +16,6 @@ System_Boundary(c1, "edx-platform: edx-uabierta", $link="https://github.com/eol-
             
                 Container(apps3, "eol_duplicate_xblock", $link="https://github.com/eol-uchile/eol_duplicate_xblock")
             
-                Container(apps4, "uabierta-test2", $link="https://github.com/eol-uchile/uabierta-test2")
-            
             }
         
             System_Boundary(python_packages, "python_packages", $link="https://github.com/eol-uchile/edx-uabierta/blob/master/requirements/python_packages.txt") {
