@@ -52,9 +52,9 @@ System_Boundary(c1, "edx-platform: edx-uabierta", $link="https://github.com/eol-
 
     System_Boundary(theme, "Themes", $link="https://github.com/eol-uchile/edx-uabierta/blob/master/themes/") {
         
-            Container(theme1, "edx-uabierta", $link="https://github.com/eol-uchile/uabierta-theme")
+            Container(theme1, "open-edx", $link="https://github.com/eol-uchile/edx-uabierta")
         
-            Container(theme2, "open-edx", $link="https://github.com/eol-uchile/edx-uabierta")
+            Container(theme2, "edx-uabierta", $link="https://github.com/eol-uchile/uabierta-theme")
         
     }
 
