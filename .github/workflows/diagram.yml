@@ -11,7 +11,6 @@ on:
       - '.github/workflows/diagram.yml'
       - 'themes/**'
       - '.gitmodules'
-
 jobs:
   call-another-reusable:
     uses: eol-uchile/edx-staging/.github/workflows/diagram.yml@eol-release/koa
