@@ -14,12 +14,8 @@ on:
 
 jobs:
   call-another-reusable:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          token: ${{ secrets.SECRET_DIAGRAM }}
-
-      - name: Call another workflow
-        uses: eol-uchile/edx-staging/.github/workflows/diagram.yml@eol-release/koa
+    uses: eol-uchile/edx-staging/.github/workflows/diagram.yml@eol-release/koa
+    secrets:
+      SECRET_DIAGRAM: ${{ secrets.SECRET_DIAGRAM }}
+    permissions:
+      contents: read
