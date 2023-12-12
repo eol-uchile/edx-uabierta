@@ -15,7 +15,3 @@ on:
 jobs:
   call-another-reusable:
     uses: eol-uchile/edx-staging/.github/workflows/diagram.yml@eol-release/koa
-    secrets:
-      SECRET_DIAGRAM: ${{ secrets.SECRET_DIAGRAM }}
-    permissions:
-      contents: read
