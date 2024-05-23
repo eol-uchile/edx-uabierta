@@ -1,0 +1,18 @@
+name: Webhook Update UAbierta
+
+on:
+  workflow_call:
+    secrets:
+      WEBHOOK_SECRET:
+        required: true
+  repository_dispatch:
+    types: [debug-webhook]
+
+jobs:
+  webhook:
+    runs-on: ubuntu-latest
+    if: ${{ github.event_name }} == 'workflow_call' || ${{ github.event.client_payload.debug }}
+    steps:
+      - name: Trigger edx-kustomize repository workflow
+        run: |
+          curl --fail-with-body --silent -X POST -H "Authorization: Bearer ${{ secrets.WEBHOOK_SECRET }}" -H "Accept: application/vnd.github+json" -H "Content-Type: application/json" https://api.github.com/repos/eol-uchile/edx-kustomize/dispatches --data '{"event_type": "update-images-v2", "client_payload": {"flavour": "uabierta"}}'

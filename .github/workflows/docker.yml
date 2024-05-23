@@ -35,10 +35,10 @@ jobs:
         run: git submodule update --init --recursive
 
       - name: Build OpenedX
-        run: docker build . --file ./Dockerfile --tag ghcr.io/eol-uchile/edx-uabierta:${{ env.RELEASE-NAME }} --tag ghcr.io/eol-uchile/edx-uabierta:${{ env.RELEASE-NAME }}-${{ env.TS }} --target base
+        run: docker build . --file ./Dockerfile --tag ghcr.io/eol-uchile/edx-uabierta:${{ env.RELEASE-NAME }} --tag ghcr.io/eol-uchile/edx-uabierta:${{ env.RELEASE-NAME }}-${{ env.TS }} --tag ghcr.io/eol-uchile/edx-uabierta:${GITHUB_SHA} --target base
 
       - name: Build static files for OpenedX S3
-        run: docker build . --file ./Dockerfile --tag ghcr.io/eol-uchile/edx-uabierta:s3-static-${{ env.RELEASE-NAME }} --tag ghcr.io/eol-uchile/edx-uabierta:s3-static-${{ env.RELEASE-NAME }}-${{ env.TS }}--target s3
+        run: docker build . --file ./Dockerfile --tag ghcr.io/eol-uchile/edx-uabierta:s3-static-${{ env.RELEASE-NAME }} --tag ghcr.io/eol-uchile/edx-uabierta:s3-static-${{ env.RELEASE-NAME }}-${{ env.TS }} --tag ghcr.io/eol-uchile/edx-uabierta:s3-static-${GITHUB_SHA} --target s3
 
       - name: Login to GitHub Container Registry
         if: ${{ github.event_name == 'merge_group' }}
