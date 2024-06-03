@@ -1,0 +1,41 @@
+name: Update Image
+
+on:
+  repository_dispatch:
+    types: [update-image]
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: '${{ github.event.client_payload.project }}-release/${{ github.event.client_payload.version }}'
+
+      - name: Pull submodules
+        run: git submodule update --init --recursive
+
+      - name: Obtain latest image version tag
+        id: version
+        run: |
+          NEWVERSION=$(gh api --header "Accept: application/vnd.github+json" --header "X-GitHub-Api-Version: 2022-11-28" /orgs/eol-uchile/packages/container/edx-platform/versions | jq '.[] | select( .metadata.container.tags[] == "eol-koa") | .metadata.container.tags[] | select(test("eol-koa-[0-9]+"))' | sed 's#"##g')
+          if [ "${NEWVERSION}" == "" ];
+          then
+            exit 1;
+          else
+            echo "NEWVERSION=${NEWVERSION}" >> $GITHUB_OUTPUT
+          fi
+      - name: Update base image into Dockerfile
+        run: perl -i -pe "s#^(FROM\ ghcr\.io\/eol-uchile\/edx-platform:)\w+(\ as\ base)$#$1${{ steps.version.outputs.result }}$2#" Dockerfile
+
+      - name: Open Pull Request
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: PR_SECRET
+          committer: ${{ github.actor }}@users.noreply.github.com
+          commit-message: "chore: Update edx-platform base version"
+          signoff: true
+          branch: create-pull-request/update-base-image
+          title: Update edx-platform base version to ${{ steps.version.outputs.result }}
+          team-reviewers: devops
