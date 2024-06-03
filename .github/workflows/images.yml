@@ -7,6 +7,8 @@ on:
 jobs:
   update:
     runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     steps:
       - uses: actions/checkout@v4
@@ -27,13 +29,15 @@ jobs:
             echo "NEWVERSION=${NEWVERSION}" >> $GITHUB_OUTPUT
           fi
       - name: Update base image into Dockerfile
-        run: perl -i -pe "s#^(FROM\ ghcr\.io\/eol-uchile\/edx-platform:)\w+(\ as\ base)$#$1${{ steps.version.outputs.result }}$2#" Dockerfile
+        run: |
+          NEWVERSION=${{ steps.version.outputs.NEWVERSION }} perl -i -pe 's#^(FROM\ ghcr\.io\/eol-uchile\/edx-platform:)\w+(\ as\ base)$#$1$ENV{NEWVERSION}$2#g' Dockerfile
 
       - name: Open Pull Request
         uses: peter-evans/create-pull-request@v6
         with:
-          token: PR_SECRET
-          committer: ${{ github.actor }}@users.noreply.github.com
+          token: ${{ secrets.PR_SECRET }}
+          author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
+          committer: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
           commit-message: "chore: Update edx-platform base version"
           signoff: true
           branch: create-pull-request/update-base-image
