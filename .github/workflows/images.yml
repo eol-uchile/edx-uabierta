@@ -21,7 +21,8 @@ jobs:
       - name: Obtain latest image version tag
         id: version
         run: |
-          NEWVERSION=$(gh api --header "Accept: application/vnd.github+json" --header "X-GitHub-Api-Version: 2022-11-28" /orgs/eol-uchile/packages/container/edx-platform/versions | jq '.[] | select( .metadata.container.tags[] == "eol-koa") | .metadata.container.tags[] | select(test("eol-koa-[0-9]+"))' | sed 's#"##g')
+          TAG=${{ github.event.client_payload.code }}-${{ github.event.client_payload.version }}
+          NEWVERSION=$(gh api --header "Accept: application/vnd.github+json" --header "X-GitHub-Api-Version: 2022-11-28" /orgs/eol-uchile/packages/container/edx-platform/versions | jq ".[] | select( .metadata.container.tags[] == \"${TAG}\") | .metadata.container.tags[] | select(test(\"${TAG}-[0-9]+\"))" | sed 's#"##g')
           if [ "${NEWVERSION}" == "" ];
           then
             exit 1;
