@@ -45,5 +45,5 @@ jobs:
           commit-message: "chore: Update edx-platform base version"
           signoff: true
           branch: create-pull-request/update-base-image
-          title: Update edx-platform base version to ${{ steps.version.outputs.result }}
+          title: Update edx-platform base version to ${{ steps.version.outputs.NEWVERSION }}
           team-reviewers: devops
